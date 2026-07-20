@@ -2289,9 +2289,9 @@ function startRecording() {
         
         recStatusText.innerText = "CONVERTING TO MP4...";
         
-        const backendUrl = (window.location.protocol === 'file:' || (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && window.location.port !== '8080')
-            ? 'http://localhost:8080/upload-convert'
-            : '/upload-convert';
+        const backendUrl = ((window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && window.location.port === '8080')
+            ? '/upload-convert'
+            : 'http://localhost:8080/upload-convert';
         
         fetch(backendUrl, {
             method: 'POST',
